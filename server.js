@@ -17,7 +17,10 @@ app.get('/', (req, res) => {
 
     const navegador = req.headers['user-agent'];
 
-    const fecha = new Date().toLocaleString();
+    // Hora de Ecuador
+    const fecha = new Date().toLocaleString('es-EC', {
+        timeZone: 'America/Guayaquil'
+    });
 
     // Guardar visita
     visitas.push({
