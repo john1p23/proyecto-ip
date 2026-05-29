@@ -2,14 +2,31 @@ body{
     background:black;
     margin:0;
     overflow:hidden;
-    font-family:"Courier New", monospace;
+    font-family:Courier New, monospace;
 }
 
 #error-container{
+
     color:#00ff00;
+
+    display:grid;
+
+    grid-template-columns:repeat(4, 1fr);
+
+    gap:40px;
+
+    padding:20px;
+
     font-size:18px;
+
     line-height:22px;
-    white-space:pre-wrap;
-    padding:10px;
-    text-shadow:0 0 5px #00ff00;
+
+    text-shadow:0 0 3px #00ff00;
+
+}
+
+.columna{
+
+    white-space:pre-line;
+
 }

@@ -1,21 +1,36 @@
 const container = document.getElementById("error-container");
 
-let texto = "";
+// Crear columnas
+const columnas = [];
 
-function agregarError(){
+for(let i = 0; i < 4; i++){
 
-    // Agrega MUCHOS errores
-    for(let i = 0; i < 20; i++){
+    const columna = document.createElement("div");
 
-        texto += "ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR\n";
+    columna.classList.add("columna");
 
-    }
+    container.appendChild(columna);
 
-    container.innerText = texto;
-
-    // Auto scroll abajo
-    window.scrollTo(0, document.body.scrollHeight);
+    columnas.push(columna);
 }
 
-// Va llenando la pantalla poco a poco
-setInterval(agregarError, 100);
+
+// Agregar MUCHOS errores
+function agregarErrores(){
+
+    columnas.forEach(columna => {
+
+        // Agrega varias líneas cada vez
+        for(let i = 0; i < 15; i++){
+
+            columna.innerText += "ERROR\n";
+
+        }
+
+    });
+
+}
+
+
+// Velocidad rápida
+setInterval(agregarErrores, 80);
