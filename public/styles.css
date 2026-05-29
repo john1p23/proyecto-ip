@@ -1,53 +1,5 @@
 body{
     background:black;
-    color:#00ff00;
-    font-family:"Courier New", monospace;
+    overflow:hidden;
     margin:0;
-    overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-}
-
-.error{
-    font-size:60px;
-    text-shadow:0 0 10px #00ff00;
-    animation:parpadeo 0.1s infinite alternate;
-}
-
-@keyframes parpadeo{
-    from{
-        opacity:1;
-    }
-
-    to{
-        opacity:0.7;
-    }
-}
-
-.fondo{
-    position:absolute;
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    z-index:-1;
-}
-
-.linea{
-    position:absolute;
-    color:#003300;
-    font-size:14px;
-    white-space:nowrap;
-    animation:caer linear infinite;
-}
-
-@keyframes caer{
-    from{
-        transform:translateY(-100%);
-    }
-
-    to{
-        transform:translateY(100vh);
-    }
 }

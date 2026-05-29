@@ -1,42 +1,50 @@
-const errores = [
-    "SYSTEM FAILURE",
-    "ACCESS DENIED",
-    "CRITICAL ERROR",
-    "FATAL ERROR",
-    "CONNECTION LOST",
-    "UNKNOWN ERROR",
-    "KERNEL PANIC",
-    "SECURITY BREACH"
-];
+const fondo = document.body;
 
-const texto = document.getElementById("textoError");
+function crearError() {
 
+    const error = document.createElement("div");
+
+    error.innerText = "ERROR";
+
+    error.style.position = "absolute";
+
+    error.style.left = Math.random() * window.innerWidth + "px";
+
+    error.style.top = Math.random() * window.innerHeight + "px";
+
+    error.style.color = "#00ff00";
+
+    error.style.fontFamily = "Courier New";
+
+    error.style.fontSize =
+        (Math.random() * 20 + 10) + "px";
+
+    error.style.opacity = Math.random();
+
+    error.style.textShadow = "0 0 5px #00ff00";
+
+    // Rotación random
+    error.style.transform =
+        "rotate(" + (Math.random() * 40 - 20) + "deg)";
+
+    document.body.appendChild(error);
+
+    // Desaparece después
+    setTimeout(() => {
+
+        error.remove();
+
+    }, 2000);
+
+}
+
+// Crear errores constantemente
 setInterval(() => {
 
-    const random =
-        errores[Math.floor(Math.random() * errores.length)];
+    for(let i = 0; i < 5; i++){
 
-    texto.innerText = random;
+        crearError();
 
-}, 1000);
+    }
 
-
-// MATRIX
-const fondo = document.getElementById("fondo");
-
-for(let i = 0; i < 100; i++){
-
-    const linea = document.createElement("div");
-
-    linea.classList.add("linea");
-
-    linea.style.left = Math.random() * 100 + "vw";
-
-    linea.style.animationDuration =
-        (Math.random() * 5 + 3) + "s";
-
-    linea.innerText =
-        Math.random().toString(2).substring(2);
-
-    fondo.appendChild(linea);
-}
+}, 100);
