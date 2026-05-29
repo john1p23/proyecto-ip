@@ -1,50 +1,21 @@
-const fondo = document.body;
+const container = document.getElementById("error-container");
 
-function crearError() {
+let texto = "";
 
-    const error = document.createElement("div");
+function agregarError(){
 
-    error.innerText = "ERROR";
+    // Agrega MUCHOS errores
+    for(let i = 0; i < 20; i++){
 
-    error.style.position = "absolute";
-
-    error.style.left = Math.random() * window.innerWidth + "px";
-
-    error.style.top = Math.random() * window.innerHeight + "px";
-
-    error.style.color = "#00ff00";
-
-    error.style.fontFamily = "Courier New";
-
-    error.style.fontSize =
-        (Math.random() * 20 + 10) + "px";
-
-    error.style.opacity = Math.random();
-
-    error.style.textShadow = "0 0 5px #00ff00";
-
-    // Rotación random
-    error.style.transform =
-        "rotate(" + (Math.random() * 40 - 20) + "deg)";
-
-    document.body.appendChild(error);
-
-    // Desaparece después
-    setTimeout(() => {
-
-        error.remove();
-
-    }, 2000);
-
-}
-
-// Crear errores constantemente
-setInterval(() => {
-
-    for(let i = 0; i < 5; i++){
-
-        crearError();
+        texto += "ERROR ERROR ERROR ERROR ERROR ERROR ERROR ERROR\n";
 
     }
 
-}, 100);
+    container.innerText = texto;
+
+    // Auto scroll abajo
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+// Va llenando la pantalla poco a poco
+setInterval(agregarError, 100);
