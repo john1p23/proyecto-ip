@@ -1,9 +1,10 @@
 const container = document.getElementById("error-container");
 
-// Crear columnas
 const columnas = [];
 
-for(let i = 0; i < 4; i++){
+
+// CREAR 12 COLUMNAS
+for(let i = 0; i < 12; i++){
 
     const columna = document.createElement("div");
 
@@ -12,16 +13,16 @@ for(let i = 0; i < 4; i++){
     container.appendChild(columna);
 
     columnas.push(columna);
+
 }
 
 
-// Agregar MUCHOS errores
+// AGREGAR MUCHOS ERROR
 function agregarErrores(){
 
     columnas.forEach(columna => {
 
-        // Agrega varias líneas cada vez
-        for(let i = 0; i < 15; i++){
+        for(let i = 0; i < 10; i++){
 
             columna.innerText += "ERROR\n";
 
@@ -32,5 +33,5 @@ function agregarErrores(){
 }
 
 
-// Velocidad rápida
-setInterval(agregarErrores, 80);
+// VELOCIDAD
+setInterval(agregarErrores, 50);

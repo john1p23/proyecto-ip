@@ -1,17 +1,41 @@
+body{
+
+    background:black;
+
+    margin:0;
+
+    overflow:hidden;
+
+    font-family:Courier New, monospace;
+
+}
+
+
 #error-container{
 
-    color:#00ff00;
+    width:100vw;
+
+    height:100vh;
 
     display:grid;
 
-    grid-template-columns:repeat(12, auto);
+    grid-template-columns:repeat(12, 1fr);
 
-    gap:5px;
-
-    padding:20px;
+    color:#00ff00;
 
     font-size:18px;
 
     line-height:22px;
+
+    padding:10px;
+
+    box-sizing:border-box;
+
+}
+
+
+.columna{
+
+    white-space:pre-line;
 
 }
