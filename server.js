@@ -4,19 +4,22 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
+
 // Aquí se guardarán las visitas
 const visitas = [];
+
 
 // Detectar IP correctamente
 app.set('trust proxy', true);
 
-// Carpeta pública
-app.use(express.static('public'));
 
 // Página principal
 app.get('/', (req, res) => {
 
-    const ip = req.ip;
+    const ip =
+        req.headers['x-forwarded-for'] ||
+        req.socket.remoteAddress ||
+        "IP no detectada";
 
     const navegador = req.headers['user-agent'];
 
@@ -37,10 +40,12 @@ app.get('/', (req, res) => {
         fecha
     });
 
-    // Mostrar HTML
-    res.sendFile(__dirname + '/public/index.html');
+    res.send(`
+        <h1>ERROR!</h1>
+    `);
 
 });
+
 
 // Panel admin
 app.get('/admin', (req, res) => {
@@ -48,6 +53,7 @@ app.get('/admin', (req, res) => {
     res.json(visitas);
 
 });
+
 
 // Encender servidor
 app.listen(PORT, () => {
