@@ -41,7 +41,23 @@ app.get('/', (req, res) => {
     });
 
     res.send(`
-        <h1>ERROR!</h1>
+        <body style="
+            background:black;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            margin:0;
+        ">
+
+            <h1 style="
+                color:white;
+                font-family:Arial;
+            ">
+                ERROR!
+            </h1>
+
+        </body>
     `);
 
 });
