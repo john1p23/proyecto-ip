@@ -1,38 +1,29 @@
 body{
-
     background:black;
-
     margin:0;
-
     overflow:hidden;
-
     font-family:Courier New, monospace;
-
 }
-
 
 #error-container{
 
-    width:100vw;
-
-    height:100vh;
+    color:#00ff00;
 
     display:grid;
 
-    grid-template-columns:repeat(12, 1fr);
+    grid-template-columns:repeat(4, 1fr);
 
-    color:#00ff00;
+    gap:40px;
+
+    padding:20px;
 
     font-size:18px;
 
     line-height:22px;
 
-    padding:10px;
-
-    box-sizing:border-box;
+    text-shadow:0 0 3px #00ff00;
 
 }
-
 
 .columna{
 
