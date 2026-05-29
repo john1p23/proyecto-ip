@@ -35,8 +35,8 @@ app.get('/', (req, res) => {
     });
 
     res.send(`
-        <h1>Bienvenido</h1>
-        <p>Tu visita fue registrada.</p>
+        <h1>ERROR!</h1>
+        
     `);
 
 });
