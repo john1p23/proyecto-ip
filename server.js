@@ -10,6 +10,9 @@ const visitas = [];
 // Detectar IP correctamente
 app.set('trust proxy', true);
 
+// Carpeta pública
+app.use(express.static('public'));
+
 // Página principal
 app.get('/', (req, res) => {
 
@@ -17,7 +20,7 @@ app.get('/', (req, res) => {
 
     const navegador = req.headers['user-agent'];
 
-    // Hora de Ecuador
+    // Hora Ecuador
     const fecha = new Date().toLocaleString('es-EC', {
         timeZone: 'America/Guayaquil'
     });
@@ -34,10 +37,8 @@ app.get('/', (req, res) => {
         fecha
     });
 
-    res.send(`
-        <h1>ERROR!</h1>
-        
-    `);
+    // Mostrar HTML
+    res.sendFile(__dirname + '/public/index.html');
 
 });
 
@@ -51,6 +52,6 @@ app.get('/admin', (req, res) => {
 // Encender servidor
 app.listen(PORT, () => {
 
-    console.log(`Servidor funcionando en http://localhost:${PORT}`);
+    console.log(`Servidor funcionando en puerto ${PORT}`);
 
 });
